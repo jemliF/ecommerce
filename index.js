@@ -14,6 +14,15 @@ app.use('/api/v1/', products);
 app.use('/api/v1/', orders);
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+
+/*app.use(function (req, res) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.write('you posted:\n');
+    res.end(JSON.stringify(req.body, null, 2));
+});*/
 
 app.listen(8080, function () {
     console.log('Server listen on port 8080');
